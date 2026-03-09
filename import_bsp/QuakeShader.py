@@ -1532,6 +1532,8 @@ class quake_shader:
             print("Fogparms with no proper values found")
             color = [1.0, 1.0, 1.0]
             density = 0.000011
+            density_scale = 1.0
+            depth = 16384.0
 
         node_Voulme = shader.nodes.new(type="ShaderNodeVolumePrincipled")
         node_density_scale = shader.nodes.new(type="ShaderNodeValue")
