@@ -1,13 +1,9 @@
 def l_format(line):
-    return line.lower().strip(" \t\r\n").replace("\t", " ")
+    return line.lower().split("//")[0].strip(" \t\r\n").replace("\t", " ")
 
 
 def l_empty(line):
     return line.strip(" \t\r\n") == ''
-
-
-def l_comment(line):
-    return l_format(line).startswith('/')
 
 
 def l_open(line):
@@ -22,7 +18,7 @@ def parse(line):
     try:
         key, value = line.split(' ', 1)
         key = key.strip("\t ")
-        value = value.strip("\t ").split("//")[0]
+        value = value.split("//")[0].strip("\t ")
     except Exception:
         key = line
         value = ""

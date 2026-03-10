@@ -35,7 +35,7 @@ def get_material_dicts(VFS, import_settings, material_list):
             # trim line
             line = l_format(line)
             # skip empty lines or comments
-            if (l_empty(line) or l_comment(line)):
+            if (l_empty(line)):
                 continue
             # content
             if (not l_open(line) and not l_close(line)):
